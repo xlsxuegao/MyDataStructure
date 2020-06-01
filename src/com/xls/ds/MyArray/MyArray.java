@@ -36,7 +36,7 @@ public class MyArray<E> {
 	}
 
 	//获取数组容量
-	public int capacity() {
+	public int getCapacity() {
 		return data.length;
 	}
 
@@ -86,6 +86,13 @@ public class MyArray<E> {
 		size++;
 	}
 
+	public E getFirst() {
+		return get(0);
+	}
+
+	public E getLast() {
+		return get(size - 1);
+	}
 	//获取指定index的元素
 	public E get(int index) {
 		if (index < 0 || index >= size) {
@@ -131,7 +138,7 @@ public class MyArray<E> {
 		for (int i = index + 1; i < size; i++) {
 			data[i - 1] = data[i];
 		}
-		data[size] = null;
+		data[size - 1] = null;
 		size--;
 		if (size == data.length / 4 && data.length / 2 != 0) {//采用lazy的方式 减少复杂度的震荡
 			reSize(data.length / 2);
