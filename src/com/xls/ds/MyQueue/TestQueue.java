@@ -5,7 +5,8 @@ package com.xls.ds.MyQueue;
  */
 public class TestQueue {
 	public static void main(String[] args) {
-		MyLoopQueue<Integer> loopQueue = new MyLoopQueue<Integer>();
+//		MyLoopQueue<Integer> loopQueue = new MyLoopQueue<Integer>();
+		MyLinkedQueue<Integer> loopQueue = new MyLinkedQueue<Integer>();
 		for (int i = 0; i < 20; i++) {
 			loopQueue.enqueue(i);
 		}
