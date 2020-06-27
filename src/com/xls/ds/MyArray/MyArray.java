@@ -20,6 +20,13 @@ public class MyArray<E> {
 		this.size = 0;
 	}
 
+	public MyArray(E[] arr) {
+		this.data = (E[]) new Object[arr.length];
+		for (int i = 0; i < arr.length; i++) {
+			data[i] = arr[i];
+		}
+		this.size = data.length;
+	}
 	//构造函数，默认容量为10
 	public MyArray() {
 		this(10);
@@ -168,6 +175,13 @@ public class MyArray<E> {
 	private void reSize(int newCapacity) {
 //		E[] newData=(E[])new Object[newCapacity];
 		data = Arrays.copyOf(this.data, newCapacity);
+	}
+
+	//交换位置i 和 j 中的元素
+	public void swap(int i, int j) {
+		E e = data[i];
+		data[i] = data[j];
+		data[j] = e;
 	}
 
 	//展示数组中的数据
